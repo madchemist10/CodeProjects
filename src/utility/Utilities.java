@@ -30,4 +30,19 @@ public class Utilities {
         }
         return true;
     }
+
+    /**
+     * Determine if input string is a palindrome.
+     * @param str input string of potential palindrome.
+     * @return true if palindrome, false if not palindrome.
+     */
+    public static boolean isPalindrome(String str){
+        int length = str.length();
+        for(int i = 0; i < ((length)/2); i++){
+            if(str.charAt(i) != str.charAt(length-1-i)){
+                return false;
+            }
+        }
+        return true;
+    }
 }
