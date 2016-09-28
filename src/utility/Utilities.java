@@ -45,4 +45,14 @@ public class Utilities {
         }
         return true;
     }
+
+    /**
+     * Determine if a number is evenly divisible by another number.
+     * @param num number to be divided.
+     * @param divisor number to divide by.
+     * @return true if evenly divisible, false if not evenly divisible.
+     */
+    public static boolean isEvenlyDivisible(int num, int divisor){
+        return (num % divisor) == 0;
+    }
 }
