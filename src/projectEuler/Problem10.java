@@ -3,7 +3,7 @@ package projectEuler;
 import utility.Utilities;
 
 /**
- * Date: 09-28-16
+ * Date: 09-29-16
  * @author MadChemist
  *
  * Question:
