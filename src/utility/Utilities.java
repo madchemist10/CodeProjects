@@ -90,4 +90,43 @@ public class Utilities {
         }
         return strArray;
     }
+
+    /**
+     * Helper method to retrieve num of divisors of a given number.
+     * @param num base number to be subdivided.
+     * @return int of number of divisors for given num.
+     */
+    public static int getNumDivisors(int num){
+        //if the number is even, only need to check half of numbers
+        if(num % 2 == 0) {
+            num = num /2;
+        }
+        int divisors = 1;
+        int count = 0;
+        /*while numbers are evenly divisible by 2
+        * increment our count (depth) and half number*/
+        while(num%2 == 0){
+            count++;
+            num = num/2;
+        }
+        /*number of divisors is equal to the number of
+        *times we divided num in half, plus the first time*/
+        divisors = divisors * (count + 1);
+        int p = 3;
+        /*until the number is equal to 1, means we have
+        * found all divisors*/
+        while (num != 1){
+            count = 0;
+            //if evenly divisible, increment count, divide by p
+            while(num % p == 0){
+                count += 1;
+                num = num / p;
+            }
+            /*number of divisors is equal to the number of
+            *times we divided num in half, plus the first time*/
+            divisors = divisors * (count + 1);
+            p += 2;
+        }
+        return divisors;
+    }
 }
