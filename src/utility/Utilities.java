@@ -1,6 +1,7 @@
 package utility;
 
 import java.io.*;
+import java.util.ArrayList;
 
 /**
  * Helper static methods to assist with functionality in different modules.
@@ -70,6 +71,25 @@ public class Utilities {
             String line;
             while((line = reader.readLine()) != null){
                 output += line;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return output;
+    }
+
+    /**
+     * Read a file into a string arrayList representation.
+     * @param filename to read data from file.
+     * @return string arrayList representation of the file read in.
+     */
+    public static ArrayList<String> readFileToStringArray(String filename){
+        ArrayList<String> output = new ArrayList<>();
+        try {
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filename)));
+            String line;
+            while((line = reader.readLine()) != null){
+                output.add(line);
             }
         } catch (Exception e) {
             e.printStackTrace();
